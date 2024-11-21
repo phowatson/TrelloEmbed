@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def trello_proxy():
     trello_url = "https://trello.com/b/JQb3dQsX.html"
-    headers = {"Accept-Encoding": "identity"}
+    headers = {"Accept-Encoding": "identity"}  # Request plain (uncompressed) response
     response = requests.get(trello_url, headers=headers)
     return Response(response.content, content_type="text/html")
 
